@@ -1,0 +1,62 @@
+//grp A ASSIGNMENT 1 
+/*
+Implement a class Complex which represents the Complex Number data type. Implement the following operations:
+Constructor (including a default constructor which creates the complex number 0+0i).
+Overloaded operator+ to add two complex numbers.
+Overloaded operator * to multiply two complex numbers. 
+Overloaded << and >> to print and read Complex Numbers
+*/
+#include<iostream>
+using namespace std;
+class complex
+{
+		int real;
+		int img;
+	public:
+		complex()
+		{
+			real=0;
+			img=0;
+		}
+		complex(int r,int i)
+		{
+			real=r;
+			img=r;
+		}
+		void print(void)
+		{
+			cout<<real<<"+"<<img<<"i"<<endl;
+		}
+		complex operator+(complex c)
+		{
+			complex temp;
+			temp.real=real+c.real;
+			temp.img=img+c.img;
+			return temp;
+		}
+		void read(void)
+		{
+			cout<<real<<"*"<<img<<"i"<<endl;
+		}
+		complex operator *(complex c)
+		{
+			complex temp;
+			temp.real=real*c.real;
+			temp.img=img*c.img;
+			return temp;
+		}
+};
+int main()
+{
+	complex c1(5,7);
+	complex c2(4,2);
+	complex c3;
+	c3=c1+c2;
+	c3.print();
+	complex c4(5,7);
+	complex c5(4,2);
+	complex c6;
+	c6=c4*c5;
+	c6.print();
+	return 0;
+}
